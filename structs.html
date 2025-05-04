@@ -1,0 +1,1287 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Constraints" href="constraints.html" /><link rel="prev" title="Supported Types" href="supported-types.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>Structs</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=6b2c8899" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: black;
+  --color-brand-content: #024bb0;
+  --color-foreground-muted: #808080;
+  --color-highlight-on-target: inherit;
+  --color-highlighted-background: #ffffcc;
+  --color-sidebar-link-text: black;
+  --color-sidebar-link-text--top-level: black;
+  --color-link: #024bb0;
+  --color-link--hover: #024bb0;
+  --color-link-underline: transparent;
+  --color-link-underline--hover: #024bb0;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #ffffff;
+  --color-brand-content: #5192d2;
+  --color-highlight-on-target: inherit;
+  --color-highlighted-background: #333300;
+  --color-sidebar-link-text: #ffffffcc;
+  --color-sidebar-link-text--top-level: #ffffffcc;
+  --color-link: #5192d2;
+  --color-link--hover: #5192d2;
+  --color-link-underline: transparent;
+  --color-link-underline--hover: #5192d2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #ffffff;
+  --color-brand-content: #5192d2;
+  --color-highlight-on-target: inherit;
+  --color-highlighted-background: #333300;
+  --color-sidebar-link-text: #ffffffcc;
+  --color-sidebar-link-text--top-level: #ffffffcc;
+  --color-link: #5192d2;
+  --color-link--hover: #5192d2;
+  --color-link-underline: transparent;
+  --color-link-underline--hover: #5192d2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">msgspec</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/msgspec-logo-light.svg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/msgspec-logo-dark.svg" alt="Dark Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="why.html">Why msgspec?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarks</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supported-types.html">Supported Types</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="constraints.html">Constraints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jsonschema.html">JSON Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema-evolution.html">Schema Evolution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="extending.html">Extending</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inspect.html">Inspecting Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="perf-tips.html">Performance Tips</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Docs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples/index.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/geojson.html">GeoJSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/asyncio-kv.html">Asyncio TCP Key-Value Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/conda-repodata.html">Conda Repodata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/pyproject-toml.html">Parsing <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/edgedb.html">Usage with EdgeDB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/structs.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="structs">
+<h1>Structs<a class="headerlink" href="#structs" title="Link to this heading">¶</a></h1>
+<p>Structs are the preferred way of defining structured data types in <code class="docutils literal notranslate"><span class="pre">msgspec</span></code>.
+They’re written in C and are quite speedy and lightweight (<a class="reference internal" href="benchmarks.html"><span class="doc">measurably
+faster</span></a> to create/compare/encode/decode than similar options like
+<a class="reference external" href="https://docs.python.org/3/library/dataclasses.html">dataclasses</a>, <a class="reference external" href="https://www.attrs.org/en/stable/index.html">attrs</a>, or <a class="reference external" href="https://pydantic-docs.helpmanual.io/">pydantic</a>). They’re great for representing structured
+data both for serialization and for use in an application.</p>
+<p>Structs are defined by subclassing from <a class="reference internal" href="api.html#msgspec.Struct" title="msgspec.Struct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.Struct</span></code></a> and annotating the
+types of individual fields. Default values can also be provided for any
+optional arguments. Here we define a struct representing a user, with one
+required field and two optional fields.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span><span class="w">    </span><span class="sd">&quot;&quot;&quot;A struct describing a user&quot;&quot;&quot;</span>
+<span class="gp">... </span>    <span class="n">name</span> <span class="p">:</span> <span class="nb">str</span>
+<span class="gp">... </span>    <span class="n">email</span> <span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="gp">... </span>    <span class="n">groups</span> <span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> is a <em>required</em> field expecting a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">email</span></code> is an <em>optional</em> field expecting a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, defaulting to
+<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> if no value is provided.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">groups</span></code> is an <em>optional</em> field expecting a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set</span></code></a> of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>. If no value is
+provided, it defaults to the empty set.</p></li>
+</ul>
+<p>Struct types automatically generate a few methods based on the provided type
+annotations:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__repr__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__copy__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__replace__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__eq__</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">__ne__</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__match_args__</span></code> (for Python 3.10+’s <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#the-match-statement">pattern matching</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__rich_repr__</span></code> (for pretty printing support with <a class="reference external" href="https://rich.readthedocs.io/en/stable/pretty.html">rich</a>)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alice</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&quot;alice&quot;</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;admin&quot;</span><span class="p">,</span> <span class="s2">&quot;engineering&quot;</span><span class="p">})</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alice</span>
+<span class="go">User(name=&#39;alice&#39;, email=None, groups={&#39;admin&#39;, &#39;engineering&#39;})</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bob</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&quot;bob&quot;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s2">&quot;bob@company.com&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bob</span>
+<span class="go">User(name=&#39;bob&#39;, email=&#39;bob@company.com&#39;, groups=set())</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alice</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&quot;alice&quot;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bob</span><span class="o">.</span><span class="n">groups</span>
+<span class="go">set()</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alice</span> <span class="o">==</span> <span class="n">bob</span>
+<span class="go">False</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alice</span> <span class="o">==</span> <span class="n">User</span><span class="p">(</span><span class="s2">&quot;alice&quot;</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;admin&quot;</span><span class="p">,</span> <span class="s2">&quot;engineering&quot;</span><span class="p">})</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Note that it is forbidden to override <code class="docutils literal notranslate"><span class="pre">__init__</span></code>/<code class="docutils literal notranslate"><span class="pre">__new__</span></code> in a struct
+definition, but other methods can be overridden or added as needed. If you need
+to customize the generated <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, see <a class="reference internal" href="#struct-post-init"><span class="std std-ref">Post-Init Processing</span></a>.</p>
+<p>The struct fields are available via the <code class="docutils literal notranslate"><span class="pre">__struct_fields__</span></code> attribute (a
+tuple of the fields in argument order ) if you need them. Here we add a method
+for converting a struct to a dict.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span><span class="w">    </span><span class="sd">&quot;&quot;&quot;A point in 2D space&quot;&quot;&quot;</span>
+<span class="gp">... </span>    <span class="n">x</span> <span class="p">:</span> <span class="nb">float</span>
+<span class="gp">... </span>    <span class="n">y</span> <span class="p">:</span> <span class="nb">float</span>
+<span class="gp">...</span>
+<span class="gp">... </span>    <span class="k">def</span><span class="w"> </span><span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="p">{</span><span class="n">f</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__struct_fields__</span><span class="p">}</span>
+<span class="gp">...</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="go">{&quot;x&quot;: 1.0, &quot;y&quot;: 2.0}</span>
+</pre></div>
+</div>
+<section id="default-values">
+<h2>Default Values<a class="headerlink" href="#default-values" title="Link to this heading">¶</a></h2>
+<p>Struct fields may be given default values, which are used if no value is
+provided to <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, or when decoding a message. Default values are
+configured as part of a Struct definition by assigning them after a field’s
+type annotation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">msgspec</span><span class="w"> </span><span class="kn">import</span> <span class="n">Struct</span><span class="p">,</span> <span class="n">field</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">a</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">... </span>    <span class="n">b</span><span class="p">:</span> <span class="n">uuid</span><span class="o">.</span><span class="n">UUID</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">c</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span><span class="p">()</span>
+<span class="go">Example(a=1, b=UUID(&#39;f63219d5-e9ca-4ae8-afd0-cba30e84222d&#39;), c=[])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">Example(a=2, b=UUID(&#39;319a6c0f-2841-4439-8bc8-2c1daf7d77a2&#39;), c=[])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span><span class="p">()</span><span class="o">.</span><span class="n">c</span> <span class="ow">is</span> <span class="n">Example</span><span class="p">()</span><span class="o">.</span><span class="n">c</span>  <span class="c1"># new list instance used each time</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Default values may be one of 3 kinds:</p>
+<ul class="simple">
+<li><p>A “static” default value. Here the same default value is used for all
+instances. These are specified by assigning the default value itself as part
+of the field definition (as in <code class="docutils literal notranslate"><span class="pre">a</span></code> above). Most default values will be of
+this variety.</p></li>
+<li><p>A “dynamic” default value. Here a new default value is used for every
+instance. These are specified by passing a 0-argument callable to the
+<code class="docutils literal notranslate"><span class="pre">default_factory</span></code> argument of <a class="reference internal" href="api.html#msgspec.field" title="msgspec.field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.field</span></code></a> (as in <code class="docutils literal notranslate"><span class="pre">b</span></code> above). This
+function will be called as needed to create a new default value per instance.
+These are mainly useful for occasions where you need dynamic defaults, or
+when a default value is a mutable object that you don’t want to share between
+all instances of the struct (a <a class="reference external" href="https://docs.python-guide.org/writing/gotchas/#mutable-default-arguments">common gotcha</a>
+in Python). Note that since the <code class="docutils literal notranslate"><span class="pre">default_factory</span></code> callables take no
+arguments, you might need to make use of a <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions">lambda</a> or <a class="reference external" href="https://docs.python.org/3/library/functools.html#functools.partial" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">functools.partial</span></code></a> to
+forward any additional parameters needed to the default factory.</p></li>
+<li><p>Builtin <em>empty</em> mutable collections (<code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">{}</span></code>, <code class="docutils literal notranslate"><span class="pre">set()</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">bytearray()</span></code>) may be used as default values (as in <code class="docutils literal notranslate"><span class="pre">c</span></code> above). Since
+defaults of these types are so common, these are “syntactic sugar” for
+specifying the corresponding <code class="docutils literal notranslate"><span class="pre">default_factory</span></code> (to avoid accidental sharing
+of mutable values). A default of <code class="docutils literal notranslate"><span class="pre">[]</span></code> is identical to a default of
+<code class="docutils literal notranslate"><span class="pre">field(default_factory=list)</span></code>, with a new list instance used each time.
+Specifying a non-empty mutable collection (e.g. <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>) as a default
+value will cause the struct definition to error (you should manually define a
+<code class="docutils literal notranslate"><span class="pre">default_factory</span></code> in this case).</p></li>
+</ul>
+</section>
+<section id="post-init-processing">
+<span id="struct-post-init"></span><h2>Post-Init Processing<a class="headerlink" href="#post-init-processing" title="Link to this heading">¶</a></h2>
+<p>If a struct type defines a <code class="docutils literal notranslate"><span class="pre">__post_init__(self)</span></code> method, this will be called
+at the end of the generated <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method. It has the same semantics as the
+<code class="docutils literal notranslate"><span class="pre">dataclasses</span></code> method <a class="reference external" href="https://docs.python.org/3/library/dataclasses.html#post-init-processing">of the same name</a>.
+This method may be useful for adding additional logic to the init (such as
+custom validation).</p>
+<p>In addition to in <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, the <code class="docutils literal notranslate"><span class="pre">__post_init__</span></code> hook is also called when:</p>
+<ul class="simple">
+<li><p>Decoding into a struct type (e.g. <code class="docutils literal notranslate"><span class="pre">msgspec.json.decode(...,</span> <span class="pre">type=MyStruct)</span></code>)</p></li>
+<li><p>Converting into a struct type (e.g. <code class="docutils literal notranslate"><span class="pre">msgspec.convert(...,</span> <span class="pre">type=MyStruct)</span></code>)</p></li>
+</ul>
+<p>In these cases any <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypeError</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a> exceptions raised by this method
+will be considered “user facing” and converted into a <a class="reference internal" href="api.html#msgspec.ValidationError" title="msgspec.ValidationError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.ValidationError</span></code></a>
+with additional context. All other exceptions will be raised directly.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Interval</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">low</span><span class="p">:</span> <span class="nb">float</span>
+<span class="gp">... </span>    <span class="n">high</span><span class="p">:</span> <span class="nb">float</span>
+<span class="gp">...</span>
+<span class="gp">... </span>    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">low</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">high</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;`low` may not be greater than `high`&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Interval</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># valid interval</span>
+<span class="go">Interval(low=1, high=2)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Interval</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># invalid interval</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">6</span>, in <span class="n">__post_init__</span>
+<span class="gr">ValueError</span>: <span class="n">`low` may not be greater than `high`</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;{&quot;low&quot;: 2, &quot;high&quot;: 1}&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">Interval</span><span class="p">)</span>  <span class="c1"># invalid interval from JSON</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">6</span>, in <span class="n">__post_init__</span>
+<span class="gr">ValueError</span>: <span class="n">`low` may not be greater than `high`</span>
+
+<span class="gt">The above exception was the direct cause of the following exception:</span>
+
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">msgspec.ValidationError</span>: <span class="n">`low` may not be greater than `high`</span>
+</pre></div>
+</div>
+</section>
+<section id="field-ordering">
+<span id="struct-field-ordering"></span><h2>Field Ordering<a class="headerlink" href="#field-ordering" title="Link to this heading">¶</a></h2>
+<p>When defining a new struct type, fields are stored in the order they’re defined
+(keyword-only fields excluded, more on this later). This is nice for
+readability since the generated <code class="docutils literal notranslate"><span class="pre">__init__</span></code> matches the field order.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">b</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>The generated <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> for <code class="docutils literal notranslate"><span class="pre">User</span></code> looks like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>One consequence of this is that you can’t put fields without defaults after
+fields with defaults, since the Python VM doesn’t allow keyword arguments
+before positional arguments. The following struct definition will error:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Invalid</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">a</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="gp">... </span>    <span class="n">b</span><span class="p">:</span> <span class="nb">int</span>  <span class="c1"># oop, no default!</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">Required field &#39;b&#39; cannot follow optional fields. Either reorder</span>
+<span class="x">the struct fields, or set `kw_only=True` in the struct definition.</span>
+</pre></div>
+</div>
+<p>Thankfully the error message includes some solutions:</p>
+<ul class="simple">
+<li><p>Reorder the struct fields, putting all required fields before all optional
+fields.</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">kw_only=True</span></code> in the struct definition. This option makes all fields
+defined on the struct <a class="reference external" href="https://docs.python.org/3/glossary.html#term-parameter">keyword-only parameters</a>.</p></li>
+</ul>
+<p>Keyword-only parameters have no such restriction; required and optional
+parameters can be mixed in any order.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">kw_only</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">a</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="gp">... </span>    <span class="n">b</span><span class="p">:</span> <span class="nb">int</span>  <span class="c1"># this is fine with kw_only=True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="go">Example(a=&#39;example&#39;, b=123)</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">kw_only</span></code> setting only affects fields defined on that class,
+<em>not</em> those defined on base or subclasses. This means you can define
+keyword-only parameters on a base class then add positional parameters in a
+subclass. All keyword-only parameters are reordered to go after all positional
+fields.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">kw_only</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">a</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="gp">... </span>    <span class="n">b</span><span class="p">:</span> <span class="nb">int</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Subclass</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">c</span><span class="p">:</span> <span class="nb">float</span>
+<span class="gp">... </span>    <span class="n">d</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>The generated <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> for <code class="docutils literal notranslate"><span class="pre">Subclass</span></code> looks like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="o">*</span> <span class="n">a</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>The field ordering rules for <code class="docutils literal notranslate"><span class="pre">Struct</span></code> types are identical to those for
+<a class="reference external" href="https://docs.python.org/3/library/dataclasses.html#module-dataclasses" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dataclasses</span></code></a>, see the <a class="reference external" href="dataclasses">dataclasses docs</a> for more information.</p>
+</section>
+<section id="class-variables">
+<h2>Class Variables<a class="headerlink" href="#class-variables" title="Link to this heading">¶</a></h2>
+<p>Like <a class="reference external" href="https://docs.python.org/3/library/dataclasses.html#module-dataclasses" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dataclasses</span></code></a>, <a class="reference internal" href="api.html#msgspec.Struct" title="msgspec.Struct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.Struct</span></code></a> types will exclude any attribute
+annotations wrapped in <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.ClassVar" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typing.ClassVar</span></code></a> from their fields.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassVar</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+<span class="gp">... </span>    <span class="n">a_class_variable</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span><span class="o">.</span><span class="n">a_class_variable</span>
+<span class="go">2</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Example</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># only `x` is counted as a field</span>
+<span class="go">Example(x=1)</span>
+</pre></div>
+</div>
+<p>Note that if using <a class="reference external" href="https://peps.python.org/pep-0563/">PEP 563</a> “postponed evaluation of annotations” (e.g.
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span> <span class="pre">annotations</span></code>) only the following spellings will work:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ClassVar</span></code> or <code class="docutils literal notranslate"><span class="pre">ClassVar[&lt;type&gt;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typing.ClassVar</span></code> or <code class="docutils literal notranslate"><span class="pre">typing.ClassVar[&lt;type&gt;]</span></code></p></li>
+</ul>
+<p>Importing <code class="docutils literal notranslate"><span class="pre">ClassVar</span></code> or <code class="docutils literal notranslate"><span class="pre">typing</span></code> under an aliased name (e.g. <code class="docutils literal notranslate"><span class="pre">import</span>
+<span class="pre">typing</span> <span class="pre">as</span> <span class="pre">typ</span></code> or <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">typing</span> <span class="pre">import</span> <span class="pre">ClassVar</span> <span class="pre">as</span> <span class="pre">CV</span></code>) will not be properly
+detected.</p>
+</section>
+<section id="type-validation">
+<h2>Type Validation<a class="headerlink" href="#type-validation" title="Link to this heading">¶</a></h2>
+<p>Unlike some other libraries (e.g. <a class="reference external" href="https://pydantic-docs.helpmanual.io/">pydantic</a>), the type annotations on a
+<a class="reference internal" href="api.html#msgspec.Struct" title="msgspec.Struct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.Struct</span></code></a> class are not checked at runtime during normal use. Types are
+only checked when <em>decoding</em> a serialized message when using a <code class="xref py py-obj docutils literal notranslate"><span class="pre">typed</span> <span class="pre">decoder</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
+<span class="gp">... </span>    <span class="n">y</span><span class="p">:</span> <span class="nb">float</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Improper types in *your* code aren&#39;t checked at runtime</span>
+<span class="gp">... </span><span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;oops&quot;</span><span class="p">)</span>
+<span class="go">Point(x=1, y=&#39;oops&#39;)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Improper types when decoding *are* checked at runtime</span>
+<span class="gp">... </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;{&quot;x&quot;: 1.0, &quot;y&quot;: &quot;oops&quot;}&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">Point</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">msgspec.ValidationError</span>: <span class="n">Expected `float`, got `str` - at `$.y`</span>
+</pre></div>
+</div>
+<p>This is intentional. Static type checkers like <a class="reference external" href="https://mypy.readthedocs.io/en/stable/">mypy</a>/<a class="reference external" href="https://github.com/microsoft/pyright">pyright</a> work well with
+<code class="docutils literal notranslate"><span class="pre">msgspec</span></code>, and can be used to catch bugs without ever running your code. When
+possible, static tools or unit tests should be preferred over adding expensive
+runtime checks which slow down every <code class="docutils literal notranslate"><span class="pre">__init__</span></code> call.</p>
+<p>The input(s) to your programs however cannot be checked statically, as they
+aren’t known until runtime. As such, <code class="docutils literal notranslate"><span class="pre">msgspec</span></code> does perform type validation
+when decoding messages (provided an expected decode type is provided). This
+validation is fast enough that it is <em>negligible in cost</em> - there is no added
+performance benefit when not using it. In fact, in most cases it’s faster to
+decode a message into a type validated <a class="reference internal" href="api.html#msgspec.Struct" title="msgspec.Struct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.Struct</span></code></a> than into an untyped
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict</span></code></a>.</p>
+</section>
+<section id="pattern-matching">
+<h2>Pattern Matching<a class="headerlink" href="#pattern-matching" title="Link to this heading">¶</a></h2>
+<p>If using Python 3.10+, <a class="reference internal" href="api.html#msgspec.Struct" title="msgspec.Struct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.Struct</span></code></a> types can be used in <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#the-match-statement">pattern matching</a>
+blocks. Replicating an example from <a class="reference external" href="https://peps.python.org/pep-0636/">PEP 636</a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># NOTE: this example requires Python 3.10+</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="o">...</span>     <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
+<span class="o">...</span>     <span class="n">y</span><span class="p">:</span> <span class="nb">float</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="k">def</span><span class="w"> </span><span class="nf">where_is</span><span class="p">(</span><span class="n">point</span><span class="p">):</span>
+<span class="o">...</span>     <span class="n">match</span> <span class="n">point</span><span class="p">:</span>
+<span class="o">...</span>         <span class="n">case</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Origin&quot;</span><span class="p">)</span>
+<span class="o">...</span>         <span class="n">case</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Y=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="o">...</span>         <span class="n">case</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;X=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="o">...</span>         <span class="n">case</span> <span class="n">Point</span><span class="p">():</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Somewhere else&quot;</span><span class="p">)</span>
+<span class="o">...</span>         <span class="n">case</span> <span class="n">_</span><span class="p">:</span>
+<span class="o">...</span>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not a point&quot;</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">where_is</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="s2">&quot;Y=6&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="equality-and-order">
+<h2>Equality and Order<a class="headerlink" href="#equality-and-order" title="Link to this heading">¶</a></h2>
+<p>By default struct types define an <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method based on the type
+definition. This enables support for equality comparisons. Additionally, you
+may configure <code class="docutils literal notranslate"><span class="pre">order=True</span></code> to make a struct type <em>orderable</em> through
+generation of <code class="docutils literal notranslate"><span class="pre">__lt__</span></code>, <code class="docutils literal notranslate"><span class="pre">__le__</span></code>, <code class="docutils literal notranslate"><span class="pre">__gt__</span></code>, and <code class="docutils literal notranslate"><span class="pre">__ge__</span></code> methods. These
+methods compare and order instances of a struct type the same as if they were
+tuples of their field values (in definition order).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
+<span class="gp">... </span>    <span class="n">y</span><span class="p">:</span> <span class="nb">float</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>In <em>rare</em> instances you may opt to disable generation of the <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method
+by configuring <code class="docutils literal notranslate"><span class="pre">eq=False</span></code>.  Equality checks will then fall back to <em>identity
+comparisons</em>, where the only value a struct instance of that type will compare
+equal to is itself.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">eq</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
+<span class="gp">... </span>    <span class="n">y</span><span class="p">:</span> <span class="nb">float</span>
+
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">==</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">False</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">==</span> <span class="n">p</span>  <span class="c1"># identity comparison only</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</section>
+<section id="frozen-instances">
+<h2>Frozen Instances<a class="headerlink" href="#frozen-instances" title="Link to this heading">¶</a></h2>
+<p>A struct type can optionally be marked as “frozen” by specifying
+<code class="docutils literal notranslate"><span class="pre">frozen=True</span></code>. This disables modifying attributes after initialization, and
+adds a <code class="docutils literal notranslate"><span class="pre">__hash__</span></code> method to the class definition. Note that for the
+<code class="docutils literal notranslate"><span class="pre">__hash__</span></code> to work, all fields on the struct must also be hashable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span><span class="w">    </span><span class="sd">&quot;&quot;&quot;This struct is immutable &amp; hashable&quot;&quot;&quot;</span>
+<span class="gp">... </span>    <span class="n">x</span><span class="p">:</span> <span class="nb">float</span>
+<span class="gp">... </span>    <span class="n">y</span><span class="p">:</span> <span class="nb">float</span>
+<span class="gp">...</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">p</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>  <span class="c1"># frozen structs are hashable, and can be keys in dicts</span>
+<span class="go">{Point(1.0, 2.0): 1}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.0</span>  <span class="c1"># frozen structs cannot be modified after creation</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="o">...</span>
+<span class="gr">AttributeError</span>: <span class="n">immutable type: &#39;Point&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="tagged-unions">
+<span id="struct-tagged-unions"></span><h2>Tagged Unions<a class="headerlink" href="#tagged-unions" title="Link to this heading">¶</a></h2>
+<p>By default a serialized struct only contains information on the <em>values</em>
+present in the struct instance - no information is serialized noting which
+struct type corresponds to the message. Instead, the user is expected to
+know the type the message corresponds to, and pass that information
+appropriately to the decoder.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Get</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">key</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msg</span> <span class="o">=</span> <span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">Get</span><span class="p">(</span><span class="s2">&quot;my key&quot;</span><span class="p">))</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msg</span>  <span class="c1"># No type information present in the message</span>
+<span class="go">b&#39;{&quot;key&quot;:&quot;my key&quot;}&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">Get</span><span class="p">)</span>
+<span class="go">Get(key=&#39;my key&#39;)</span>
+</pre></div>
+</div>
+<p>In most cases this works well - schemas are often simple and each value may
+only correspond to at most one Struct type. However, sometimes you may have a
+message (or a field in a message) that may contain one of a number of different
+structured types. In this case we need some way to determine the type of the
+message from the message itself!</p>
+<p><code class="docutils literal notranslate"><span class="pre">msgspec</span></code> handles this through the use of <a class="reference external" href="https://en.wikipedia.org/wiki/Tagged_union">Tagged Unions</a>. A new field (the
+“tag field”) is added to the serialized representation of all struct types in
+the union. Each struct type associates a different value (the “tag”) with this
+field. When the decoder encounters a tagged union it decodes the tag first and
+uses it to determine the type to use when decoding the rest of the object. This
+process is efficient and makes determining the type of a serialized message
+unambiguous.</p>
+<p>The quickest way to enable tagged unions is to set <code class="docutils literal notranslate"><span class="pre">tag=True</span></code> when defining
+every struct type in the union. In this case <code class="docutils literal notranslate"><span class="pre">tag_field</span></code> defaults to
+<code class="docutils literal notranslate"><span class="pre">&quot;type&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">tag</span></code> defaults to the struct class name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Get&quot;</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Union</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Pass in ``tag=True`` to tag the structs using the default configuration</span>
+<span class="gp">... </span><span class="k">class</span><span class="w"> </span><span class="nc">Get</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">key</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Put</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">key</span><span class="p">:</span> <span class="nb">str</span>
+<span class="gp">... </span>    <span class="n">val</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msg</span> <span class="o">=</span> <span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">Get</span><span class="p">(</span><span class="s2">&quot;my key&quot;</span><span class="p">))</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msg</span>  <span class="c1"># &quot;type&quot; is the tag field, &quot;Get&quot; is the tag</span>
+<span class="go">b&#39;{&quot;type&quot;:&quot;Get&quot;,&quot;key&quot;:&quot;my key&quot;}&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a decoder for decoding either Get or Put</span>
+<span class="gp">... </span><span class="n">dec</span> <span class="o">=</span> <span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">Decoder</span><span class="p">(</span><span class="n">Union</span><span class="p">[</span><span class="n">Get</span><span class="p">,</span> <span class="n">Put</span><span class="p">])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># The tag value is used to determine the message type</span>
+<span class="gp">... </span><span class="n">dec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;{&quot;type&quot;: &quot;Put&quot;, &quot;key&quot;: &quot;my key&quot;, &quot;val&quot;: &quot;my val&quot;}&#39;</span><span class="p">)</span>
+<span class="go">Put(key=&#39;my key&#39;, val=&#39;my val&#39;)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;{&quot;type&quot;: &quot;Get&quot;, &quot;key&quot;: &quot;my key&quot;}&#39;</span><span class="p">)</span>
+<span class="go">Get(key=&#39;my key&#39;)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># A tagged union can also contain non-struct types.</span>
+<span class="gp">... </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="sa">b</span><span class="s1">&#39;123&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="nb">type</span><span class="o">=</span><span class="n">Union</span><span class="p">[</span><span class="n">Get</span><span class="p">,</span> <span class="n">Put</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">123</span>
+</pre></div>
+</div>
+<p>If you want to change this behavior to use a different tag field and/or value,
+you can further configure things through the <code class="docutils literal notranslate"><span class="pre">tag_field</span></code> and <code class="docutils literal notranslate"><span class="pre">tag</span></code> kwargs.
+A struct’s tagging configuration is determined as follows.</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">tag</span></code> and <code class="docutils literal notranslate"><span class="pre">tag_field</span></code> are <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default), or <code class="docutils literal notranslate"><span class="pre">tag=False</span></code>,
+then the struct is considered “untagged”. The struct is serialized with only
+its standard fields, and cannot participate in <code class="docutils literal notranslate"><span class="pre">Union</span></code> types with other
+structs.</p></li>
+<li><p>If either <code class="docutils literal notranslate"><span class="pre">tag</span></code> or <code class="docutils literal notranslate"><span class="pre">tag_field</span></code> are non-None, then the struct is
+considered “tagged”. The struct is serialized with an additional field (the
+<code class="docutils literal notranslate"><span class="pre">tag_field</span></code>) mapping to its corresponding <code class="docutils literal notranslate"><span class="pre">tag</span></code> value. It can participate
+in <code class="docutils literal notranslate"><span class="pre">Union</span></code> types with other structs, provided they all share the same
+<code class="docutils literal notranslate"><span class="pre">tag_field</span></code> and have unique <code class="docutils literal notranslate"><span class="pre">tag</span></code> values.</p></li>
+<li><p>If a struct is tagged, <code class="docutils literal notranslate"><span class="pre">tag_field</span></code> defaults to <code class="docutils literal notranslate"><span class="pre">&quot;type&quot;</span></code> if not provided
+or inherited. This can be overridden by passing a tag field explicitly (e.g.
+<code class="docutils literal notranslate"><span class="pre">tag_field=&quot;kind&quot;</span></code>). Note that <code class="docutils literal notranslate"><span class="pre">tag_field</span></code> must not conflict with any
+other field names in the struct, and must be the same for all struct types in
+a union.</p></li>
+<li><p>If a struct is tagged, <code class="docutils literal notranslate"><span class="pre">tag</span></code> defaults to the class name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Get&quot;</span></code>) if
+not provided or inherited. This can be overridden by passing a string (or
+less commonly an integer) value explicitly (e.g. <code class="docutils literal notranslate"><span class="pre">tag=&quot;get&quot;</span></code>).  <code class="docutils literal notranslate"><span class="pre">tag</span></code> can
+also be passed a callable that takes the class qualname and returns a valid tag
+value (e.g. <code class="docutils literal notranslate"><span class="pre">tag=str.lower</span></code>). Note that tag values must be unique for all
+struct types in a union, and <code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">int</span></code> tag types cannot both be
+used within the same union.</p></li>
+</ul>
+<p>If you like subclassing, both <code class="docutils literal notranslate"><span class="pre">tag_field</span></code> and <code class="docutils literal notranslate"><span class="pre">tag</span></code> are inheritable by
+subclasses, allowing configuration to be set once on a base class and reused
+for all struct types you wish to tag.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Union</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a base class for tagged structs, where:</span>
+<span class="gp">... </span><span class="c1"># - the tag field is &quot;op&quot;</span>
+<span class="gp">... </span><span class="c1"># - the tag is the class name lowercased</span>
+<span class="gp">... </span><span class="k">class</span><span class="w"> </span><span class="nc">TaggedBase</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">tag_field</span><span class="o">=</span><span class="s2">&quot;op&quot;</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Use the base class to pass on the configuration</span>
+<span class="gp">... </span><span class="k">class</span><span class="w"> </span><span class="nc">Get</span><span class="p">(</span><span class="n">TaggedBase</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">key</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Put</span><span class="p">(</span><span class="n">TaggedBase</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">key</span><span class="p">:</span> <span class="nb">str</span>
+<span class="gp">... </span>    <span class="n">val</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msg</span> <span class="o">=</span> <span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">Get</span><span class="p">(</span><span class="s2">&quot;my key&quot;</span><span class="p">))</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msg</span>  <span class="c1"># &quot;op&quot; is the tag field, &quot;get&quot; is the tag</span>
+<span class="go">b&#39;{&quot;op&quot;:&quot;get&quot;,&quot;key&quot;:&quot;my key&quot;}&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a decoder for decoding either Get or Put</span>
+<span class="gp">... </span><span class="n">dec</span> <span class="o">=</span> <span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">Decoder</span><span class="p">(</span><span class="n">Union</span><span class="p">[</span><span class="n">Get</span><span class="p">,</span> <span class="n">Put</span><span class="p">])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># The tag value is used to determine the message type</span>
+<span class="gp">... </span><span class="n">dec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;{&quot;op&quot;: &quot;put&quot;, &quot;key&quot;: &quot;my key&quot;, &quot;val&quot;: &quot;my val&quot;}&#39;</span><span class="p">)</span>
+<span class="go">Put(key=&#39;my key&#39;, val=&#39;my val&#39;)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;{&quot;op&quot;: &quot;get&quot;, &quot;key&quot;: &quot;my key&quot;}&#39;</span><span class="p">)</span>
+<span class="go">Get(key=&#39;my key&#39;)</span>
+</pre></div>
+</div>
+</section>
+<section id="omitting-default-values">
+<span id="omit-defaults"></span><h2>Omitting Default Values<a class="headerlink" href="#omitting-default-values" title="Link to this heading">¶</a></h2>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">msgspec</span></code> encodes all fields in a Struct type, including optional
+fields (those configured with a default value).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">name</span> <span class="p">:</span> <span class="nb">str</span>
+<span class="gp">... </span>    <span class="n">email</span> <span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="gp">... </span>    <span class="n">groups</span> <span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alice</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&quot;alice&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alice</span>  <span class="c1"># email &amp; groups are using the default values</span>
+<span class="go">User(name=&#39;alice&#39;, email=None, groups=set())</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">alice</span><span class="p">)</span>  <span class="c1"># default values are present in encoded message</span>
+<span class="go">b&#39;{&quot;name&quot;:&quot;alice&quot;,&quot;email&quot;:null,&quot;groups&quot;:[]}&#39;</span>
+</pre></div>
+</div>
+<p>If the default values are known on the decoding end (making serializing them
+redundant), it may be beneficial and desired to omit default values from the
+encoded message. This can be done by configuring <code class="docutils literal notranslate"><span class="pre">omit_defaults=True</span></code> as part
+of the Struct definition:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">omit_defaults</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">name</span> <span class="p">:</span> <span class="nb">str</span>
+<span class="gp">... </span>    <span class="n">email</span> <span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="gp">... </span>    <span class="n">groups</span> <span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alice</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&quot;alice&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">alice</span><span class="p">)</span>  <span class="c1"># default values are omitted</span>
+<span class="go">b&#39;{&quot;name&quot;:&quot;alice&quot;}&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bob</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&quot;bob&quot;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s2">&quot;bob@company.com&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">bob</span><span class="p">)</span>
+<span class="go">b&#39;{&quot;name&quot;:&quot;bob&quot;,&quot;email&quot;:&quot;bob@company.com&quot;}&#39;</span>
+</pre></div>
+</div>
+<p>Omitting defaults reduces the size of the encoded message, and often also
+improves encoding and decoding performance (since there’s less work to do).</p>
+<p>Note that detection of default values is optimized for performance; in certain
+situations a default value may still be encoded. For the curious, the current
+detection logic is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">matches_default</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="gp">... </span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Whether a value matches the default for a field&quot;&quot;&quot;</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="n">default</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="kc">True</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">(</span><span class="n">default</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="kc">False</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">set</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="kc">True</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="forbidding-unknown-fields">
+<span id="forbid-unknown-fields"></span><h2>Forbidding Unknown Fields<a class="headerlink" href="#forbidding-unknown-fields" title="Link to this heading">¶</a></h2>
+<p>By default <code class="docutils literal notranslate"><span class="pre">msgspec</span></code> will skip unknown fields encountered when decoding into
+<code class="docutils literal notranslate"><span class="pre">Struct</span></code> types. This is normally desired, as it allows for
+<a class="reference internal" href="schema-evolution.html"><span class="doc">Schema Evolution</span></a> and more flexible decoding.</p>
+<p>One downside is that typos may go unnoticed when decoding <code class="docutils literal notranslate"><span class="pre">Struct</span></code> types with
+optional fields. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">field_one</span><span class="p">:</span> <span class="nb">int</span>
+<span class="gp">... </span>    <span class="n">field_two</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="sa">b</span><span class="s1">&#39;{&quot;field_one&quot;: 1, &quot;field_twoo&quot;: true}&#39;</span><span class="p">,</span>  <span class="c1"># oops, a typo</span>
+<span class="gp">... </span>    <span class="nb">type</span><span class="o">=</span><span class="n">Example</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">Example(field_one=1, field_two=False)</span>
+</pre></div>
+</div>
+<p>In this example, the misspelled <code class="docutils literal notranslate"><span class="pre">&quot;field_twoo&quot;</span></code> is ignored since no field with
+that name exists. Since <code class="docutils literal notranslate"><span class="pre">field_two</span></code> has a default value, the default is used
+and no error is raised for a missing field.</p>
+<p>To prevent typos like this, you can configure <code class="docutils literal notranslate"><span class="pre">forbid_unknown_fields=True</span></code> as
+part of the struct definition. If this option is enabled, any unknown fields
+encountered will result in an error.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">forbid_unknown_fields</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">field_one</span><span class="p">:</span> <span class="nb">int</span>
+<span class="gp">... </span>    <span class="n">field_two</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="sa">b</span><span class="s1">&#39;{&quot;field_one&quot;: 1, &quot;field_twoo&quot;: true}&#39;</span><span class="p">,</span>  <span class="c1"># oops, a typo</span>
+<span class="gp">... </span>    <span class="nb">type</span><span class="o">=</span><span class="n">Example</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">msgspec.ValidationError</span>: <span class="n">Object contains unknown field `field_twoo`</span>
+</pre></div>
+</div>
+</section>
+<section id="renaming-fields">
+<h2>Renaming Fields<a class="headerlink" href="#renaming-fields" title="Link to this heading">¶</a></h2>
+<p>Sometimes you want the field name used in the encoded message to differ from
+the name used by your Python code. Perhaps you want a <code class="docutils literal notranslate"><span class="pre">camelCase</span></code> naming
+convention in your JSON messages, but to use <code class="docutils literal notranslate"><span class="pre">snake_case</span></code> field names in
+Python.</p>
+<p><code class="docutils literal notranslate"><span class="pre">msgspec</span></code> supports two places for configuring a field’s name used for
+encoding/decoding:</p>
+<p><strong>On the field definition</strong></p>
+<p>If you’re only renaming a few fields, you might find configuring the new names
+as part of the field definition to be the simplest option. To do this you can
+use the <code class="docutils literal notranslate"><span class="pre">name</span></code> argument in <a class="reference internal" href="api.html#msgspec.field" title="msgspec.field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.field</span></code></a>. Any fields declared with this
+option will use the new name for encoding/decoding.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+<span class="gp">... </span>    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+<span class="gp">... </span>    <span class="n">z</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">msgspec</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;field_z&quot;</span><span class="p">)</span>  <span class="c1"># renamed to &quot;field_z&quot;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Python code uses the original field names</span>
+<span class="gp">... </span><span class="n">ex</span> <span class="o">=</span> <span class="n">Example</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Encoded messages use the renamed field names</span>
+<span class="gp">... </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+<span class="go">b&#39;{&quot;x&quot;:1,&quot;y&quot;:2,&quot;field_z&quot;:3}&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Decoding also uses the renamed field names</span>
+<span class="gp">... </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;{&quot;x&quot;: 1, &quot;y&quot;: 2, &quot;field_z&quot;: 3}&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">Example</span><span class="p">)</span>
+<span class="go">Example(x=1, y=2, z=3)</span>
+</pre></div>
+</div>
+<p><strong>On the struct definition</strong></p>
+<p>If you’re renaming lots of fields (especially if you’re renaming them with a
+naming convention like <code class="docutils literal notranslate"><span class="pre">camelCase</span></code>), you may wish to make use of the
+<code class="docutils literal notranslate"><span class="pre">rename</span></code> configuration option in the <code class="xref py py-obj docutils literal notranslate"><span class="pre">Struct</span></code> definition instead. This can
+take a few different values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code>: the default, no field renaming (<code class="docutils literal notranslate"><span class="pre">example_field</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;lower&quot;</span></code>: lowercase all fields (<code class="docutils literal notranslate"><span class="pre">example_field</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;upper&quot;</span></code>: uppercase all fields (<code class="docutils literal notranslate"><span class="pre">EXAMPLE_FIELD</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;camel&quot;</span></code>: camelCase all fields (<code class="docutils literal notranslate"><span class="pre">exampleField</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;pascal&quot;</span></code>: PascalCase all fields (<code class="docutils literal notranslate"><span class="pre">ExampleField</span></code>)</p></li>
+<li><p>A mapping from field names to the renamed names. Field names missing from the
+mapping will not be renamed.</p></li>
+<li><p>A callable (signature <code class="docutils literal notranslate"><span class="pre">rename(name:</span> <span class="pre">str)</span> <span class="pre">-&gt;</span> <span class="pre">Optional[str]</span></code>) to use to
+rename all field names. Note that <code class="docutils literal notranslate"><span class="pre">None</span></code> for a return value indicates the
+original field name should be used.</p></li>
+</ul>
+<p>The renamed field names are used for encoding and decoding only, any python
+code will still refer to them using their original names.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;camel&quot;</span><span class="p">):</span>
+<span class="gp">... </span><span class="w">    </span><span class="sd">&quot;&quot;&quot;A struct with fields renamed using camelCase&quot;&quot;&quot;</span>
+<span class="gp">... </span>    <span class="n">field_one</span><span class="p">:</span> <span class="nb">int</span>
+<span class="gp">... </span>    <span class="n">field_two</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Python code uses the original field names</span>
+<span class="gp">... </span><span class="n">ex</span> <span class="o">=</span> <span class="n">Example</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">field_two</span><span class="o">=</span><span class="s2">&quot;two&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Encoded messages use the renamed field names</span>
+<span class="gp">... </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+<span class="go">b&#39;{&quot;fieldOne&quot;:1,&quot;fieldTwo&quot;:&quot;two&quot;}&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Decoding uses the renamed field names</span>
+<span class="gp">... </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;{&quot;fieldOne&quot;: 3, &quot;fieldTwo&quot;: &quot;four&quot;}&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">Example</span><span class="p">)</span>
+<span class="go">Example(field_one=3, field_two=&#39;four&#39;)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Decoding errors also use the renamed field names</span>
+<span class="gp">... </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;{&quot;fieldOne&quot;: 5}&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">Example</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">msgspec.ValidationError</span>: <span class="n">Object missing required field `fieldTwo`</span>
+</pre></div>
+</div>
+<p>If renaming to camelCase, you may run into issues if your field names contain
+acronyms (e.g. <code class="docutils literal notranslate"><span class="pre">FQDN</span></code> in <code class="docutils literal notranslate"><span class="pre">setHostnameAsFQDN</span></code>). Some JSON style guides
+prefer to fully-uppercase these components (<code class="docutils literal notranslate"><span class="pre">FQDN</span></code>), but <code class="docutils literal notranslate"><span class="pre">msgspec</span></code> has no
+way to know if a component is an acroynm or not (and so will result in
+<code class="docutils literal notranslate"><span class="pre">Fqdn</span></code>). As such, we recommend using an explicit dict mapping for renaming if
+generating <code class="xref py py-obj docutils literal notranslate"><span class="pre">Struct</span></code> types to match an existing API.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/#podspec-v1-core</span>
+<span class="c1"># An explicit mapping from python name -&gt; JSON field name</span>
+<span class="n">v1podspec_names</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">...</span>
+    <span class="s2">&quot;service_account_name&quot;</span><span class="p">:</span> <span class="s2">&quot;serviceAccountName&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;set_hostname_as_fqdn&quot;</span><span class="p">:</span> <span class="s2">&quot;setHostnameAsFQDN&quot;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="c1"># Pass the mapping to `rename` to explicitly rename all fields</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">V1PodSpec</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="n">v1podspec_names</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="n">service_account_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">set_hostname_as_fqdn</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Note that if both the <code class="docutils literal notranslate"><span class="pre">rename</span></code> configuration option and the <code class="docutils literal notranslate"><span class="pre">name</span></code> arg to
+<a class="reference internal" href="api.html#msgspec.field" title="msgspec.field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.field</span></code></a> are used, names set explicitly via <a class="reference internal" href="api.html#msgspec.field" title="msgspec.field"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.field</span></code></a> take
+precedence.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">rename</span><span class="o">=</span><span class="s2">&quot;camel&quot;</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">field_x</span><span class="p">:</span> <span class="nb">int</span>
+<span class="gp">... </span>    <span class="n">field_y</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">msgspec</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>  <span class="c1"># set explicitly</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">Example</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="go">b&#39;{&quot;fieldX&quot;:1,&quot;y&quot;:2}&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="encoding-decoding-as-arrays">
+<h2>Encoding/Decoding as Arrays<a class="headerlink" href="#encoding-decoding-as-arrays" title="Link to this heading">¶</a></h2>
+<p>By default Struct objects encode the same dicts, with both the keys and values
+present in the message.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+<span class="gp">... </span>    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="go">b&#39;{&quot;x&quot;:1,&quot;y&quot;:2}&#39;</span>
+</pre></div>
+</div>
+<p>If you need higher performance (at the cost of more inscrutable message
+encoding), you can set <code class="docutils literal notranslate"><span class="pre">array_like=True</span></code> on a struct definition. Structs with
+this option enabled are encoded/decoded as array-like types, removing the field
+names from the encoded message. This can provide on average another ~2x speedup
+for decoding (and ~1.5x speedup for encoding).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Point2</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">array_like</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+<span class="gp">... </span>    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">Point2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="go">b&#39;[1,2]&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;[3,4]&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">Point2</span><span class="p">)</span>
+<span class="go">Point2(x=3, y=4)</span>
+</pre></div>
+</div>
+<p>Note that <a class="reference internal" href="#struct-tagged-unions"><span class="std std-ref">Tagged Unions</span></a> also work with structs with
+<code class="docutils literal notranslate"><span class="pre">array_like=True</span></code>. In this case the tag is encoded as the first item in the
+array, and is used to determine which type in the union to use when decoding.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Union</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Get</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">array_like</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">key</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Put</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">array_like</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">key</span><span class="p">:</span> <span class="nb">str</span>
+<span class="gp">... </span>    <span class="n">val</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">Get</span><span class="p">(</span><span class="s2">&quot;my key&quot;</span><span class="p">))</span>
+<span class="go">b&#39;[&quot;Get&quot;,&quot;my key&quot;]&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msgspec</span><span class="o">.</span><span class="n">json</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="sa">b</span><span class="s1">&#39;[&quot;Put&quot;, &quot;my key&quot;, &quot;my val&quot;]&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="nb">type</span><span class="o">=</span><span class="n">Union</span><span class="p">[</span><span class="n">Get</span><span class="p">,</span> <span class="n">Put</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">Put(key=&#39;my key&#39;, val=&#39;my val&#39;)</span>
+</pre></div>
+</div>
+</section>
+<section id="runtime-definition">
+<h2>Runtime Definition<a class="headerlink" href="#runtime-definition" title="Link to this heading">¶</a></h2>
+<p>In some cases it can be useful to dynamically generate <a class="reference internal" href="api.html#msgspec.Struct" title="msgspec.Struct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.Struct</span></code></a> classes
+at runtime. This can be handled through the use of <a class="reference internal" href="api.html#msgspec.defstruct" title="msgspec.defstruct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.defstruct</span></code></a>, which
+has a signature similar to <a class="reference external" href="https://docs.python.org/3/library/dataclasses.html#dataclasses.make_dataclass" title="(in Python v3.13)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dataclasses.make_dataclass</span></code></a>. See
+<a class="reference internal" href="api.html#msgspec.defstruct" title="msgspec.defstruct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.defstruct</span></code></a> for more information.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span> <span class="o">=</span> <span class="n">msgspec</span><span class="o">.</span><span class="n">defstruct</span><span class="p">(</span><span class="s2">&quot;Point&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span>
+<span class="go">Point(x=1.0, y=2.0)</span>
+</pre></div>
+</div>
+</section>
+<section id="disabling-garbage-collection-advanced">
+<span id="struct-gc"></span><h2>Disabling Garbage Collection (Advanced)<a class="headerlink" href="#disabling-garbage-collection-advanced" title="Link to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is an advanced optimization, and only recommended for users who fully
+understand the implications of disabling the GC.</p>
+</div>
+<p>Python uses <a class="reference external" href="https://en.wikipedia.org/wiki/Reference_counting">reference counting</a> to detect when memory can be freed, with a
+periodic <a class="reference external" href="https://devguide.python.org/garbage_collector/">cyclic garbage collector</a> pass to detect and free cyclic references.
+Garbage collection (GC) is triggered by the number of uncollected GC-enabled
+(objects that contain other objects) objects passing a certain threshold. This
+design means that garbage collection passes often run during code that creates
+a lot of objects (for example, deserializing a large message).</p>
+<p>By default, <a class="reference internal" href="api.html#msgspec.Struct" title="msgspec.Struct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">msgspec.Struct</span></code></a> types will only be tracked if they contain a
+reference to a tracked object themselves. This means that structs referencing
+only scalar values (ints, strings, bools, …) won’t contribute to GC load, but
+structs referencing containers (lists, dicts, structs, …) will.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">msgspec</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">gc</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">msgspec</span><span class="o">.</span><span class="n">Struct</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">x</span><span class="p">:</span> <span class="n">Any</span>
+<span class="gp">... </span>    <span class="n">y</span><span class="p">:</span> <span class="n">Any</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ex1</span> <span class="o">=</span> <span class="n">Example</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># ex1 is untracked, since it only references untracked objects</span>
+<span class="gp">... </span><span class="n">gc</span><span class="o">.</span><span class="n">is_tracked</span><span class="p">(</span><span class="n">ex1</span><span class="p">)</span>
+<span class="go">False</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ex2</span> <span class="o">=</span> <span class="n">Example</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># ex2 is tracked, since it references tracked objects</span>
+<span class="gp">... </span><span class="n">gc</span><span class="o">.</span><span class="n">is_tracked</span><span class="p">(</span><span class="n">ex2</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>If you <em>are certain</em> that your struct types can <em>never</em> participate in a
+reference cycle, you <em>may</em> find a <a class="reference internal" href="benchmarks.html#struct-gc-benchmark"><span class="std std-ref">performance boost</span></a> from setting <code class="docutils literal notranslate"><span class="pre">gc=False</span></code> on a struct definition. This
+boost is tricky to measure in isolation, since it should only result in the
+garbage collector not running as frequently - an integration benchmark is
+recommended to determine if this is worthwhile for your workload. A workload is
+likely to benefit from this optimization in the following situations:</p>
+<ul class="simple">
+<li><p>You’re allocating a lot of struct objects at once (for example, decoding a
+large object). Setting <code class="docutils literal notranslate"><span class="pre">gc=False</span></code> on these types will reduce the
+likelihood of a GC pass occurring while decoding, improving application
+latency.</p></li>
+<li><p>You have a large number of long-lived struct objects. Setting <code class="docutils literal notranslate"><span class="pre">gc=False</span></code>
+on these types will reduce the load on the GC during collection cycles of
+later generations.</p></li>
+</ul>
+<p>Struct types with <code class="docutils literal notranslate"><span class="pre">gc=False</span></code> will never be tracked, even if they reference
+container types. It is your responsibility to ensure cycles with these objects
+don’t occur, as a cycle containing only <code class="docutils literal notranslate"><span class="pre">gc=False</span></code> structs will <em>never</em> be
+collected (leading to a memory leak).</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="constraints.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Constraints</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="supported-types.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Supported Types</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; Jim Crist-Harif
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/jcrist/msgspec" aria-label="GitHub"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+</svg></a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Structs</a><ul>
+<li><a class="reference internal" href="#default-values">Default Values</a></li>
+<li><a class="reference internal" href="#post-init-processing">Post-Init Processing</a></li>
+<li><a class="reference internal" href="#field-ordering">Field Ordering</a></li>
+<li><a class="reference internal" href="#class-variables">Class Variables</a></li>
+<li><a class="reference internal" href="#type-validation">Type Validation</a></li>
+<li><a class="reference internal" href="#pattern-matching">Pattern Matching</a></li>
+<li><a class="reference internal" href="#equality-and-order">Equality and Order</a></li>
+<li><a class="reference internal" href="#frozen-instances">Frozen Instances</a></li>
+<li><a class="reference internal" href="#tagged-unions">Tagged Unions</a></li>
+<li><a class="reference internal" href="#omitting-default-values">Omitting Default Values</a></li>
+<li><a class="reference internal" href="#forbidding-unknown-fields">Forbidding Unknown Fields</a></li>
+<li><a class="reference internal" href="#renaming-fields">Renaming Fields</a></li>
+<li><a class="reference internal" href="#encoding-decoding-as-arrays">Encoding/Decoding as Arrays</a></li>
+<li><a class="reference internal" href="#runtime-definition">Runtime Definition</a></li>
+<li><a class="reference internal" href="#disabling-garbage-collection-advanced">Disabling Garbage Collection (Advanced)</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=de5a9c30"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+body[data-theme]:not([data-theme="dark"]) .highlight .gp, .highlight .gh {
+    color: #808080;
+    font-weight: normal;
+}
+
+body[data-theme]:not([data-theme="dark"]) .highlight .go {
+    color: #203060;
+}
+
+body[data-theme="dark"] .highlight .gh, .highlight .gp {
+    color: #aaaaaa;
+    font-weight: normal;
+}
