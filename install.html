@@ -200,7 +200,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">msgspec</div></a>
+      <a href="index.html"><div class="brand">msgspec-x</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -311,19 +311,22 @@
         <article role="main" id="furo-main-content">
           <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">msgspec</span></code> may be installed via <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Note that Python &gt;= 3.8
-is required. The basic install has no required dependencies.</p>
+<p><code class="docutils literal notranslate"><span class="pre">msgspec-x</span></code> may be installed via <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Note that Python &gt;= 3.9 is required. The basic install has no required dependencies.</p>
 <p><strong>pip</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>msgspec
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>msgspec-x
 </pre></div>
 </div>
 <p><strong>conda</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>msgspec<span class="w"> </span>-c<span class="w"> </span>conda-forge
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>msgspec-x<span class="w"> </span>-c<span class="w"> </span>conda-forge
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not install both <code class="docutils literal notranslate"><span class="pre">msgspec</span></code> and <code class="docutils literal notranslate"><span class="pre">msgspec-x</span></code> in the same environment.</p>
 </div>
 <section id="optional-dependencies">
 <h2>Optional Dependencies<a class="headerlink" href="#optional-dependencies" title="Link to this heading">¶</a></h2>
-<p>Depending on your platform, the base install of <code class="docutils literal notranslate"><span class="pre">msgspec</span></code> may not support
+<p>Depending on your platform, the base install of <code class="docutils literal notranslate"><span class="pre">msgspec-x</span></code> may not support
 <a class="reference external" href="https://toml.io">TOML</a> or <a class="reference external" href="https://yaml.org">YAML</a> without additional dependencies.</p>
 <section id="toml">
 <h3>TOML<a class="headerlink" href="#toml" title="Link to this heading">¶</a></h3>
@@ -336,11 +339,11 @@ the standard library’s <a class="reference external" href="https://docs.python
 <p>You may either install these dependencies manually, or depend on the <code class="docutils literal notranslate"><span class="pre">toml</span></code>
 extra:</p>
 <p><strong>pip</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;msgspec[toml]&quot;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;msgspec-x[toml]&quot;</span>
 </pre></div>
 </div>
 <p><strong>conda</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>msgspec-toml<span class="w"> </span>-c<span class="w"> </span>conda-forge
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>msgspec-x-toml<span class="w"> </span>-c<span class="w"> </span>conda-forge
 </pre></div>
 </div>
 </section>
@@ -349,11 +352,11 @@ extra:</p>
 <p>The <a class="reference external" href="https://yaml.org">YAML</a> protocol requires <a class="reference external" href="https://pyyaml.org/">PyYAML</a> on all platforms. You may either install
 this dependency manually, or depend on the <code class="docutils literal notranslate"><span class="pre">yaml</span></code> extra:</p>
 <p><strong>pip</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;msgspec[yaml]&quot;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;msgspec-x[yaml]&quot;</span>
 </pre></div>
 </div>
 <p><strong>conda</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>msgspec-yaml<span class="w"> </span>-c<span class="w"> </span>conda-forge
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>msgspec-x-yaml<span class="w"> </span>-c<span class="w"> </span>conda-forge
 </pre></div>
 </div>
 </section>
@@ -397,7 +400,7 @@ install from the <a class="reference external" href="https://github.com/jcrist/m
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; Jim Crist-Harif
+                Copyright &#169; Night Sailer
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -406,7 +409,7 @@ install from the <a class="reference external" href="https://github.com/jcrist/m
           </div>
           <div class="right-details">
             <div class="icons">
-              <a class="muted-link " href="https://github.com/jcrist/msgspec" aria-label="GitHub"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+              <a class="muted-link " href="https://github.com/nightsailer/msgspec-x" aria-label="GitHub"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
 </svg></a>
               
